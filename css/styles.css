@@ -1,4 +1,14 @@
-/* Styles for whole page */
+/* import other style pages */
+@import url("./homepageStyles.css");
+
+@import url("./aboutStyles.css");
+
+@import url("./doiCaseStudyStyles.css");
+
+/* Styles for whole site */
+
+/* breakpoints for media queries chosen based on https://material.io/archive/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints */
+
 body {
     background-color: #efefef;
     font-family: "Open Sans", sans-serif;
@@ -40,16 +50,69 @@ h5 {
     font-size: 1.25rem;
 }
 
+/* Media query for Small screen font size) */
+@media only screen and (max-width: 840px) {
+    html {
+        font-size: 80%;
+    }
+
+    h1 {
+        font-size: 1.802rem;
+    }
+
+    h2 {
+        font-size: 1.602rem;
+    }
+
+    h3 {
+        font-size: 1.424rem;
+    }
+
+    h4 {
+        font-size: 1.266rem;
+    }
+
+    h5 {
+        font-size: 1.125rem;
+    }
+}
+
+/* Media query for medium screen font size) */
+@media only screen and (min-width: 841px) and (max-width: 1280px) {
+    html {
+        font-size: 90%;
+    }
+
+    h1 {
+        font-size: 2.488rem;
+    }
+
+    h2 {
+        font-size: 2.074rem;
+    }
+
+    h3 {
+        font-size: 1.728rem;
+    }
+
+    h4 {
+        font-size: 1.44rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+}
+
 a {
     text-decoration: none;
-    /* color: #201E1F; */
 }
 
 button {
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
-    padding: 10px 24px;
-    border-radius: 10px;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.5rem;
     cursor: pointer;
 }
 
@@ -67,9 +130,9 @@ header {
     font-size: 1.25rem;
     display: flex;
     width: 68%;
-    height: 60px;
+    height: 3rem;
     justify-content: space-between;
-    margin: 56px auto 0 auto;
+    margin: 2.8rem auto 0 auto;
     color: #201E1F;
     /* position: sticky;
     top: 0; */
@@ -77,8 +140,15 @@ header {
 
 nav {
     /* border: 1px solid red; */
-    width: 316px;
-    height: 60px;
+    width: 34%;
+    height: 3rem;
+}
+
+/* At small and medium screens remove nav links (to be replaced with hamburger */
+@media only screen and (max-width: 1280px) {
+    nav {
+        display: none;
+    }
 }
 
 nav ul {
@@ -101,192 +171,8 @@ nav a:hover {
 }
 
 header img {
-    height: 60px;
+    height: 3rem;
     width: auto;
-}
-
-/* Styles for hero */
-.homeHero {
-    /* border: 1px solid blue; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 68%;
-    margin: 0 auto;
-}
-
-.homeHero div {
-    /* border: 1px solid red; */
-    width: 54%;
-}
-
-.homeHero h1 {
-    font-weight: 700;
-    margin: 0 0 24px 0;
-}
-
-.homeHero h3 {
-    margin: 0 0 24px 0;
-}
-
-.homeHero button {
-    background-color: #133853;
-    border: 0;
-}
-
-.homeAboutBtn {
-    color: #efefef;
-}
-
-/* .homeHero button:focus {
-    border: 4px solid #b1a79e;
-} */
-
-.homeAboutBtn:active {
-    background-color: #133853e6;
-}
-
-#heroImage {
-    /* border: 1px solid orange; */
-    height: 45%;
-    width: 52%;
-    padding: 0;
-    margin-left: -5.7%;
-}
-
-/* Styles for middle section */
-.middle {
-    /* border: 1px solid purple; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 56px;
-}
-
-.middle h4 {
-    /* border: 1px solid purple; */
-    margin: 13px 0 0 0;
-}
-
-.middle svg {
-    /* border: 1px solid red; */
-    height: 24px;
-    width: 24px;
-    margin: 16px 0 0 8px;
-}
-
-/* Styles for projects section */
-.projects {
-    /* border: 1px solid green; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 72px auto 0;
-    width: 68%;
-    height: 1600px;
-}
-
-.card {
-    display: flex;
-    margin: 0 0 48px 0;
-    height: 25%;
-    border-radius: 10px;
-    box-shadow: 0px 1px 2px 0px #0000004d, 0px 2px 6px 2px #00000026;
-}
-
-.card img {
-    height: auto;
-    width: 83%;
-}
-
-.cardButton {
-    background-color: #efefef;
-    border-style: solid;
-    border-color: #133853;
-    border-width: 1px;
-    color: #133853;
-}
-
-.cardButton:active {
-    border: 1px solid #133853b3;
-    color: #201E1Fb3;
-}
-
-.leftPhoto {
-    width: 64%;
-    border-radius: 10px 0 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.rightDetails {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7f7f7;
-    width: 36%;
-    border-radius: 0 10px 10px 0;
-}
-
-.info {
-    /* border: 1px solid brown; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 87%;
-    height: 75%;
-}
-
-.info h4 {
-    /* border: 1px solid green; */
-    font-weight: 700;
-    margin: 0;
-    height: 82px;
-}
-
-.info p {
-    /* border: 1px solid yellow; */
-    font-size: 1rem;
-    margin: 0;
-    height: 84px;
-}
-
-/* .btnContainer {
-    border: 1px solid purple;
-} */
-
-.rightPhoto {
-    width: 64%;
-    border-radius: 0 10px 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.leftDetails {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7f7f7;
-    width: 36%;
-    border-radius: 10px 0 0 10px;
-}
-
-#card1 .leftPhoto {
-    background-color: #133853;
-}
-
-#card2 .rightPhoto {
-    background-color: #6A2355;
-}
-
-#card3 .leftPhoto {
-    background-color: #B1A79E;
-}
-
-#card4 .rightPhoto {
-    background-color: #133853;
 }
 
 /* Styles for footer */
@@ -294,11 +180,12 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 4rem;
 }
 
 footer h5 {
     /* border: 1px solid red; */
-    margin: 0 0 16px 0;
+    margin: 0 0 0.5rem 0;
 }
 
 footer a {
@@ -307,459 +194,5 @@ footer a {
 
 footer p {
     /* border: 1px solid red; */
-    margin: 16px 0;
-}
-
-/* Styles for About page */
-.about {
-    /* border: 1px solid red; */
-    display: flex;
-    width: 65%;
-    justify-content: space-between;
-    margin: 80px auto 0 auto;
-}
-
-.aboutInfo {
-    width: 55%;
-    /* border: 1px solid forestgreen; */
-}
-
-.about h3 {
-    /* border: 1px solid blue; */
-    margin: 0 0 16px 0;
-}
-
-.about button {
-    background-color: #133853;
-    border: 0;
-    width: 155px;
-    color: #efefef;
-}
-
-.about a {
-    color: #efefef;
-}
-
-.about p {
-    /* border: 1px solid green; */
-    padding: 16px 0 0 0;
-    margin: 0;
-}
-
-.about img {
-    /* border: 1px solid blueviolet; */
-    width: 40%;
-    height: 80%;
-}
-
-.aboutButtons {
-    /* border: 1px solid orange; */
-    display: flex;
-    justify-content: space-around;
-    padding: 32px 16px 16px;
-}
-
-.aboutSkills {
-    /* border: 1px solid green; */
-    margin: 64px auto 80px;
-    width: 68%;
-}
-
-.aboutSkills h5 {
-    /* border: 1px solid red; */
-    font-weight: 700;
-    margin: 0;
-}
-
-.skillsLists {
-    /* border: 1px solid blue; */
-    display: flex;
-    justify-content: space-between;
-}
-
-.skillsLists ul {
-    padding: 0;
-}
-
-.skillsLists li {
-    /* border: 1px solid orange; */
-    list-style-type: none;
-    padding: 2px;
-}
-
-/* Styles for DOI Case Study */
-.doiHead div {
-    background-color: #6A2355;
-    margin: 56px 0 0 0;
-    height: 504px;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.doiHead img {
-    width: 71%;
-    height: auto;
-}
-
-.doiHead h1 {
-    text-align: center;
-    margin: 40px 0 0 0;
-}
-
-.doiHead h4 {
-    text-align: center;
-    width: 65%;
-    margin: 16px auto 0 auto;
-}
-
-.summary {
-    /* border: 1px solid red; */
-    display: flex;
-    flex-direction: row;
-    margin: 66px auto 0 auto;
-    justify-content: space-between;
-    width: 65%;
-}
-
-.summary div {
-    /* border: 1px solid blue; */
-    width: 20%;
-    margin: 0 auto;
-}
-
-.summary h5 {
-    margin: 0;
-    text-decoration: underline;
-}
-
-.summary p {
-    margin: 12px 0 0 0;
-}
-
-.title {
-    /* border: 1px solid red; */
-    margin: 40px auto 0 auto;
-    /* width: 65%; */
-}
-
-.title h2 {
-    margin: 0px auto;
-}
-
-.decor {
-    width: 225px;
-    height: 24px;
-    background-color: #B1A79E;
-    margin: -28px 0 0 28px;
-}
-
-.background,
-.research,
-.definition,
-.ideation,
-.prototypes,
-.testing,
-.reflections {
-    width: 65%;
-    margin: 0 auto;
-}
-
-/* Styles for case study background section */
-.background p {
-    margin: 24px 0 0 0;
-}
-
-/* Styles for case study research section */
-.research p {
-    margin: 24px 0 0 0;
-}
-
-.research img {
-    display: block;
-    width: 38%;
-    height: auto;
-    margin: 16px auto 0 auto;
-}
-
-.testingSummary {
-    display: grid;
-    background-color: #133853;
-    color: #efefef;
-    margin: 24px auto 0 auto;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 33% 67%;
-    grid-template-areas:
-        "formatTitle objectivesTitle tasksTitle"
-        "formatList objectivesList tasksList";
-}
-
-#formatTitle {
-    grid-area: formatTitle;
-    margin: 24px 24px 16px;
-}
-
-#formatList {
-    grid-area: formatList;
-    margin: 0 24px 24px;
-}
-
-#objectivesTitle {
-    grid-area: objectivesTitle;
-    margin: 24px 24px 16px;
-}
-
-#objectivesList {
-    grid-area: objectivesList;
-    margin: 0 24px 24px;
-}
-
-#tasksTitle {
-    grid-area: tasksTitle;
-    margin: 24px 24px 16px;
-}
-
-#tasksList {
-    grid-area: tasksList;
-    margin: 0 24px 24px;
-}
-
-.testingSummary ul {
-    list-style: square outside;
-    padding: 0 0 0 24px;
-}
-
-/* Styles for case study definition section */
-.definitionGrid {
-    /* border: 1px solid orange; */
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 71% 29%;
-    grid-template-areas:
-        "testingNotes analysisImage"
-        "navNotes navNotes";
-}
-
-#testingNotes {
-    grid-area: testingNotes;
-    margin: 0;
-}
-
-#analysisImage {
-    grid-area: analysisImage;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 24px 0 0 0;
-}
-
-#analysisImage img {
-    width: 100%;
-    height: auto;
-}
-
-#navNotes {
-    grid-area: navNotes;
-}
-
-.definition p {
-    margin: 24px 0 0 0;
-}
-
-.definition ul {
-    /* border: 1px solid red; */
-    margin: 0;
-    list-style: square outside;
-    padding: 0 0 0 24px;
-}
-
-.definition li {
-    padding: 0.5em 0;
-}
-
-/* Styles for case study ideation section */
-.ideation p {
-    margin: 24px 0 0 0;
-}
-
-.ideationGrid {
-    /* border: 1px solid blue; */
-    display: grid;
-    margin: 0;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 48% 10% 32%;
-    grid-template-areas:
-        "para1 para1"
-        "image1 image1"
-        "para2 para2"
-        "image2 para3";
-}
-
-#ideationPara1 {
-    /* border: 1px solid green; */
-    grid-area: para1;
-}
-
-#ideationImage1 {
-    /* border: 1px solid teal; */
-    width: 100%;
-    height: auto;
-    margin: 24px 0 0 0;
-    grid-area: image1;
-}
-
-#ideationPara2 {
-    /* border: 1px solid violet; */
-    grid-area: para2;
-}
-
-#ideationPara3 {
-    /* border: 1px solid cyan; */
-    grid-area: para3;
-}
-
-#ideationImage2 {
-    /* border: 1px solid blueviolet; */
-    grid-area: image2;
-    width: 80%;
-    height: auto;
-    display: block;
-    margin: 24px auto 0 auto;
-}
-
-/* Styles for case study prototypes section */
-.prototypes h4 {
-    margin: 24px 0 0 0;
-}
-
-.prototypes p {
-    margin: 24px 0 0 0;
-}
-
-.wireframeImages {
-    background-color: #133853;
-    margin: 24px 0 0 0;
-    display: grid;
-    grid-template-columns: 37% 37% 26%;
-    grid-template-rows: 100%;
-    grid-template-areas:
-        "wireframeHomepage desktopNav mobileNav";
-}
-
-#wireframeHomepage {
-    width: 95%;
-    grid-area: wireframeHomepage;
-    margin: 16px 10px;
-}
-
-#desktopNav {
-    width: 95%;
-    grid-area: desktopNav;
-    margin: 16px 10px;
-}
-
-#mobileNav {
-    width: 93%;
-    grid-area: mobileNav;
-    margin: 16px 10px;
-}
-
-.volunteerWireframes {
-    /* border: 1px solid green; */
-    width: 80%;
-    margin: 24px auto 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#initialVolWireframe {
-    width: 45%;
-}
-
-#revVolWireframe {
-    width: 45%;
-}
-
-.hiFidelity {
-    /* border: 1px solid magenta; */
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 68% 32%;
-    grid-template-areas:
-        "para1 styletile"
-        "para2 para2";
-}
-
-#hiFiPara1 {
-    grid-area: para1;
-}
-
-#doiStyletile {
-    grid-area: styletile;
-    width: 97%;
-    height: auto;
-    margin: 24px 0 0 auto;
-}
-
-#hiFiPara2 {
-    grid-area: para2;
-    /* margin: 16px 0 0 0; */
-}
-
-/* Styles for case study testing section */
-.testing p {
-    margin: 24px 0 0 0;
-}
-
-.testingImages {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.testingImages img {
-    width: 49%;
-    height: auto;
-    margin: 24px 0 0 0;
-}
-
-.prototypeLinks {
-    border: 1px solid slateblue;
-    width: 100%;
-    margin: 24px auto 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-
-#mobilePrototype {
-    border: 1px solid navy;
-    width: 22%;
-    margin: 0;
-}
-
-#desktopPrototype {
-    border: 1px solid darkorchid;
-    width: 74%;
-    margin: 0;
-}
-
-#mobilePrototype img {
-    width: 98.5%;
-}
-
-#desktopPrototype img {
-    width: 100%;
-}
-
-#mobilePrototype figcaption {
-    text-align: center;
-    font-size: 0.8rem;
-}
-
-#desktopPrototype figcaption {
-    text-align: center;
+    margin: 0.5rem 0;
 }
