@@ -56,7 +56,7 @@
 }
 
 .title h2 {
-    margin: 0px auto;
+    margin: 0 auto;
 }
 
 .decor {
@@ -394,6 +394,7 @@
 
 /* breakpoints for media queries chosen based on https://material.io/archive/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints */
 
+
 @media only screen and (max-width: 840px) {
     .doiHead img {
         width: 80%;
@@ -465,10 +466,9 @@
 
     .testingSummary {
         width: 80%;
-        height: 400px;
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 35% 35% 30%;
+        grid-template-rows: repeat(3, auto);
         grid-template-areas:
             "format"
             "objectives"
@@ -495,7 +495,7 @@
 
     .definitionGrid {
         grid-template-columns: 100%;
-        grid-template-rows: 40% 35% 25%;
+        grid-template-rows: repeat(3, auto);
         grid-template-areas:
             "testingNotes"
             "analysisImage"
@@ -503,7 +503,7 @@
     }
 
     #analysisImage {
-        display: block;
+        /* display: block; */
         margin: 0 auto;
         width: 90%;
         height: auto;
@@ -511,7 +511,7 @@
 
     .ideationGrid {
         grid-template-columns: 100%;
-        grid-template-rows: 13% 25% 15% 28% 19%;
+        grid-template-rows: repeat(5, auto);
         grid-template-areas:
             "para1"
             "image1"
@@ -542,7 +542,7 @@
 
     .hiFidelity {
         grid-template-columns: 100%;
-        grid-template-rows: 36% 36% 28%;
+        grid-template-rows: repeat(3, auto);
         grid-template-areas:
             "styletile"
             "para1"
@@ -568,7 +568,7 @@
             "responsibilities timeline"
             "collaborators deliverables";
         margin: 3.3rem auto 0 auto;
-        width: 70%;
+        width: 65%;
     }
 
     #doiResponsibilities {
@@ -595,7 +595,7 @@
 
     .definitionGrid {
         grid-template-columns: 100%;
-        grid-template-rows: 38% 35% 27%;
+        grid-template-rows: repeat(3, auto);
         grid-template-areas:
             "testingNotes"
             "analysisImage"
@@ -611,7 +611,7 @@
 
     .ideationGrid {
         grid-template-columns: 100%;
-        grid-template-rows: 13% 25% 13% 31% 18%;
+        grid-template-rows: repeat(5, auto);
         grid-template-areas:
             "para1"
             "image1"
@@ -634,7 +634,7 @@
 
     .hiFidelity {
         grid-template-columns: 100%;
-        grid-template-rows: 42% 33% 25%;
+        grid-template-rows: repeat(3, auto);
         grid-template-areas:
             "styletile"
             "para1"
